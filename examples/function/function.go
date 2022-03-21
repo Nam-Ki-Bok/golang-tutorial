@@ -30,9 +30,24 @@ func division(a, b int) (int, error) {
 	return result, nil
 }
 
+// 가변 함수
+func sum(arr ...int) int {
+	total := 0
+	for _, val := range arr {
+		total += val
+	}
+	return total
+}
+
 func main() {
 	fmt.Println(plus(20, 10))     // 30
 	fmt.Println(multi(20, 10))    // 200
 	fmt.Println(division(20, 10)) // 2 nil
 	fmt.Println(division(20, 0))  // -1 division by zero
+
+	fmt.Println(sum(1, 2, 3))       // 6
+	fmt.Println(sum(1, 2, 3, 4, 5)) // 15
+
+	a := []int{1, 2, 3, 4, 5}
+	fmt.Println(sum(a...)) // 15
 }
