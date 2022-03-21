@@ -2,20 +2,18 @@ package main
 
 import (
 	"fmt"
+	"sort"
 )
 
 func main() {
 	var a = []int{1, 2, 3, 4, 5}
 	fmt.Println(a) // [1 2 3 4 5]
 
-	// append
-	// 원소 추가
-	a = append(a, 6)
-	fmt.Println(a) // [1 2 3 4 5 6]
+	a = append(a, 6) // 원소 추가
+	fmt.Println(a)   // [1 2 3 4 5 6]
 
-	// 길이가 5인 빈 문자열을 원소로 가지고 있는 slice 생성
-	b := make([]string, 5)
-	fmt.Println(b) // [   ]
+	b := make([]string, 5) // 길이가 5인 빈 문자열을 원소로 가지고 있는 slice 생성
+	fmt.Println(b)         // [   ]
 
 	b[0], b[1], b[2], b[3], b[4] = "a", "b", "c", "d", "e"
 	fmt.Println(b) // [a b c d e]
@@ -30,8 +28,12 @@ func main() {
 	copy(c, b)     // slice b를 slice c에 deep copy
 	fmt.Println(c) // [a b c]
 
-	// c 값을 변경해도 b 값은 변하지 않는다
-	c[0] = "A"
+	c[0] = "A"     // c 값을 변경해도 b 값은 변하지 않는다
 	fmt.Println(b) // [a b c d e]
 	fmt.Println(c) // [A b c]
+
+	d := []int{5, 4, 2, 7, 1, 9, 3, 6, 8}
+	fmt.Println(sort.IntsAreSorted(d)) // false
+	sort.Ints(d)                       // sort slice
+	fmt.Println(sort.IntsAreSorted(d)) // true
 }
