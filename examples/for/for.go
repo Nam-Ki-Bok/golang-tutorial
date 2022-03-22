@@ -11,23 +11,21 @@ func main() {
 	}
 	fmt.Println()
 
-	// 무한 루프
-	j := 0
-	for {
-		fmt.Print(" ", j) // 0 1 2 3 ... 100
-		if j == 100 {
+	// continue, break
+	for i := 0; i < 10; i++ {
+		if i%2 == 0 {
+			continue
+		} else {
+			fmt.Println(i)
+		}
+
+		if i == 9 {
 			break
 		}
-		j++
 	}
-	fmt.Println()
 
-	// continue
-	for k := 1; k < 100; k++ {
-		if k%2 == 0 {
-			continue
-		}
-		fmt.Print(" ", k) // 1 3 5 7 9 ... 99
+	// 무한 루프
+	for {
+		fmt.Println("Hello! this is infinity loop")
 	}
-	fmt.Println()
 }
