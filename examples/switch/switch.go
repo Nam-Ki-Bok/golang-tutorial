@@ -32,12 +32,12 @@ func main() {
 		case score >= 60:
 			println("D")
 		default:
-			println("No Hope")
+			println("F")
 		}
 	}(score)
 
 	// fallthrough 사용 시
-	// 해당 case 밑에 있는 모든 case 실행
+	// 해당 case의 다음 case 실행
 	switch num := 1; num {
 	case 1:
 		fmt.Println("1 continue..")
