@@ -11,6 +11,12 @@ func main() {
 	a["carrot"] = "vegetable"
 	fmt.Println(a) // map[apple:fruit carrot:vegetable]
 
+	b := map[string]string{
+		"apple":  "fruit",
+		"carrot": "vegetable",
+	}
+	fmt.Println(b) // map[apple:fruit carrot:vegetable]
+
 	value, isExist := a["apple"]
 	fmt.Println(value, isExist) // fruit true
 
