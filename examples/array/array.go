@@ -18,4 +18,7 @@ func main() {
 	c := [5]string{"a", "b", "c", "d", "e"}
 	fmt.Println(c) // [a b c d e]
 
+	// 배열 길이 자동 할당
+	d := [...]int{1, 2, 3, 4, 5, 6}
+	fmt.Println(d) // 1, 2, 3, 4, 5, 6
 }
