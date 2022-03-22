@@ -19,6 +19,10 @@ func main() {
 		fmt.Println(key, val) // apple fruit, onion vegetable
 	}
 
+	for _, val := range b {
+		fmt.Println(val) // fruit, vegetable
+	}
+
 	for key := range b {
 		fmt.Println(key) // apple, onion
 	}
