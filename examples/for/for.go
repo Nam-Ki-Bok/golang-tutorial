@@ -24,6 +24,13 @@ func main() {
 		}
 	}
 
+	// 조건문만 존재하는 for
+	n := 1
+	for n < 100 {
+		fmt.Println(n) // 1 2 4 8 16 32 64
+		n *= 2
+	}
+
 	// 무한 루프
 	for {
 		fmt.Println("Hello! this is infinity loop")
