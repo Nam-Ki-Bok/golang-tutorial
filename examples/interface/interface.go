@@ -4,12 +4,12 @@ import (
 	"fmt"
 )
 
-type Person struct {
+type Programmer struct {
 	name string
 }
 
 func main() {
-	printAllType(1, "hello", 3.14, Person{name: "wade"})
+	printAllType(1, "hello", 3.14, Programmer{name: "wade"})
 }
 
 // 빈 인터페이스를 통해 모든 타입을 대응

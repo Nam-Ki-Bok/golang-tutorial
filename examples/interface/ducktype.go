@@ -4,46 +4,46 @@ import (
 	"fmt"
 )
 
-type Dog struct {
+type Adult struct {
 	name string
 }
 
-type Cat struct {
+type Baby struct {
 	name string
 }
 
-type animal interface {
-	whoAmI() string
-	bark()
+type Person interface {
+	eat() string
+	think() string
 }
 
-func action(a animal) {
-	a.bark()
-	fmt.Println("hello", a.whoAmI())
+func define(p Person) {
+	fmt.Println("사람인..", p.eat())
+	fmt.Println("사람인..", p.think())
 }
 
 func main() {
-	dog := &Dog{name: "tory"}
-	cat := &Cat{name: "nana"}
+	a := new(Adult)
+	b := new(Baby)
 
-	action(dog)
-	action(cat)
+	// a, b 모두 Person interface의 메소드를 구현하였기 때문에
+	// Person interface 타입으로 본다.
+	define(a)
+	define(b)
 }
 
-func (d *Dog) whoAmI() string {
-	fmt.Println("I'm", d.name)
-	return d.name
+func (a *Adult) eat() string {
+	return "어른이 밥을 먹습니다."
 }
 
-func (d *Dog) bark() {
-	fmt.Println("mung!")
+func (a *Adult) think() string {
+	return "어른이 생각을 합니다."
 }
 
-func (c *Cat) whoAmI() string {
-	fmt.Println("I'm", c.name)
-	return c.name
+func (b *Baby) eat() string {
+	return "아기가 밥을 먹습니다."
 }
 
-func (c *Cat) bark() {
-	fmt.Println("meow!")
+func (b *Baby) think() string {
+	return "아기가 생각을 합니다."
 }
